@@ -26,8 +26,8 @@ def split_data(data: MusicDataset, train_ratio: float = 0.7) -> Tuple[List[Any],
     return x_train_final, y_train_final, x_val, y_val, x_test, y_test
 
 
-def create_dataset(x_values: List[Any], y_values: List[Any], max_len: int, pad_value: int = 0) -> MusicDataset:
-    return MusicDataset(list(zip(x_values, y_values)), max_len, pad_value)
+def create_dataset(x_values: List[Any], y_values: List[Any], max_len: int, pad_value: int = 0, if_embedding=True) -> MusicDataset:
+    return MusicDataset(list(zip(x_values, y_values)), max_len, pad_value, if_embedding)
 
 
 def get_sampler(dataset: Dataset) -> WeightedRandomSampler:
